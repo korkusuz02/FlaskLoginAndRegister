@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form class="form-signin" method="post">
+    <section class="vh-100" style="background-color: #508bfc;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                  <h3 class="mb-5">Kayıt Sayfası</h3>
+                  <div >
+                    <label for="name" class="sr-only">Ad</label>
+                    <input name="name" type="text"  class="form-control" placeholder="Ad" required autofocus>
+                  </div>
+                  <br>
+                  <div >
+                    <label for="surname" class="sr-only">Soyad</label>
+                    <input name="surname" type="text"  class="form-control" placeholder="Soyad" required autofocus>
+                  </div>
+                  <br>
+                  <div >
+                    <label for="email" class="sr-only">Email address</label>
+                    <input name="email" type="email"  class="form-control" placeholder="Email" required autofocus>
+                  </div>
+                  <br>
+                  <div >
+                    <label for="password" class="sr-only">Parola</label>
+                    <input name="password" type="password"  class="form-control" placeholder="Parola" required autofocus>
+                  </div>
+                  <br><br>
+                  <button class="btn btn-lg btn-block btn-primary" type="submit">Kayıt Ol</button>
+      
+                  <hr class="my-4">
+                {% with messages=get_flashed_messages() %}
+                {%if messages%}
+                <ul classs="flashes">
+                    {%for message in messages%}
+                    <div  class="alert alert-primary" role="alert">
+                        {{message}}
+                    </div>
+                    {%endfor%}
+                </ul>
+                {%endif%}
+                {%endwith%}
+                  <button class="btn btn-primary btn-lg btn-block" style="background-color: #39a1dd;"
+                    type="submit"><a href="/login">Giriş Yap</a></button>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+</body>
+</html>
